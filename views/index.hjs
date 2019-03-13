@@ -8,5 +8,12 @@
     <img src="https://parismatch.be/app/uploads/2018/04/Macaca_nigra_self-portrait_large-e1524567086123-1100x715.jpg">
     <h1>{{ title }}</h1>
     <p>Welcome to {{ title }}</p>
+
+    <form method="post" action="/ville">
+      <p><input type="text" name="nom_ville" placeholder="ville"/></p>
+      <textarea id="description" name="desc" rows="5" cols="33"></textarea>
+      <button>envoyer</button>
+    </form>
+
   </body>
 </html>
