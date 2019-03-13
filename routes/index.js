@@ -22,6 +22,4 @@ router.post('/ville', function(req, res) {
 
 })
 
-
-
 module.exports = router;
