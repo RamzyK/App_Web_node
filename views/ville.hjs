@@ -7,7 +7,15 @@
   <body>
     <h1>La ville choisie est: {{ ville }}</h1>
     <h1>Description:</h1>
-    <p>{{{description}}}</p>
+    <p>{{description}}</p>
 
+    <iframe
+        width="600"
+        height="450"
+        frameborder="0"
+        style="border:0"
+        src="https://maps.google.com/maps?q=+{{latitude}}+,+{{longitude}}+&hl=es;z=14&amp;output=embed">
+
+      </iframe>
   </body>
 </html>
