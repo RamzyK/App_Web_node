@@ -1,4 +1,5 @@
 import test from 'ava'
+const nock = require('nock')
 var axios = require('axios');
 
 test("La page d'index du site comprend bien un formulaire HTML", async t => {
@@ -21,6 +22,18 @@ test('Le nom de la ville correspond bien au nom passé en paramètre', async t =
       });
 
       t.is(responseGet.data.toString().includes("Paris"), true);
+    } catch (e) {
+      t.fail("Erreur serveur!")
+    }
+});
+
+test('Le nom de la ville correspond bien au nom passé en paramètre', async t => {
+    try {
+      const responseGet = await axios.post('https://cryptic-basin-35008.herokuapp.com/ville', {
+        nom_ville: "AZERTYUIO"
+      });
+
+      t.is(responseGet.data.toString().includes("La ville recherchée n'existe pas !"), true);
     } catch (e) {
       t.fail("Erreur serveur!")
     }
