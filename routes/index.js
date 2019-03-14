@@ -17,9 +17,7 @@ router.post('/ville', function(req, res) {
     })
     .catch(function (error) {
       console.log("Error: " + error + "\n\n\n");
-      res.send(error);
     });
-
-})
+});
 
 module.exports = router;
